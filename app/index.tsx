@@ -1,9 +1,11 @@
 import * as React from "react";
-import { View, Text, Button } from "react-native";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "../components/pages/login";
 import DetailsScreen from "../components/pages/list";
+import { Text, View } from "react-native";
+import LogIn from "./login";
 
 const Stack = createNativeStackNavigator();
 
