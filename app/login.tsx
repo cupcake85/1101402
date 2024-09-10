@@ -1,7 +1,14 @@
 import React from "react";
-import { Text, View, TouchableOpacity, TextInput, Image } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput,
+  Image,
+  Button,
+} from "react-native";
 
-export default function LogIn() {
+export default function LogIn({ navigation }: { navigation: any }) {
   return (
     <View style={{ flex: 1 }}>
       <View
@@ -46,6 +53,10 @@ export default function LogIn() {
           <Text>Google</Text>
           <Text>face Book</Text>
           <Text>Apple Id</Text>
+          <Button
+            title="Go to Lists"
+            onPress={() => navigation.navigate("Lists")}
+          />
         </View>
       </View>
     </View>
