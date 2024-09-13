@@ -2,7 +2,7 @@ import * as React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-export default function Header() {
+export default function Header(props: any) {
   return (
     <View style={styles.headerWrapper}>
       <View style={styles.header}>
@@ -20,7 +20,7 @@ export default function Header() {
       </View>
 
       <View style={styles.tab}>
-        <Text style={{ color: "white" }}>Home</Text>
+        <Text style={{ color: "white" }}>{props.name}</Text>
       </View>
     </View>
   );
