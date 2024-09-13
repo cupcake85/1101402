@@ -1,9 +1,8 @@
 import * as React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
-export default function Header(props: any) {
+export default function Header() {
   return (
     <View style={styles.headerWrapper}>
       <View style={styles.header}>
@@ -17,17 +16,11 @@ export default function Header(props: any) {
           <View style={styles.cart}>
             <AntDesign name="shoppingcart" size={24} color="black" />
           </View>
-          <MaterialIcons
-            name="menu"
-            size={28}
-            color="black"
-            style={{ marginRight: 15 }}
-          />
         </View>
       </View>
 
       <View style={styles.tab}>
-        <Text style={{ color: "white" }}>{props.name}</Text>
+        <Text style={{ color: "white" }}>Home</Text>
       </View>
     </View>
   );
