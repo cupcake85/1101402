@@ -15,91 +15,93 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function ProfileScreen({ navigation }: { navigation: any }) {
   return (
-    <View style={styles.container}>
-      <View style={styles.profileContainer}>
-        <Image
-          source={require("../assets/images/profile.png")}
-          style={styles.profileImage}
-        />
-        <Text style={styles.userName}>DiGiTECH</Text>
-        <Text style={styles.userEmail}>dgt@gmail.com</Text>
-      </View>
-
-      {/* ส่วนของ My Account */}
-      <View style={styles.sectionContainer}>
-        <Text style={styles.sectionTitle}>My account</Text>
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.menuItem}>
-            <Image
-              source={require("../assets/images/user.png")}
-              style={styles.icon}
-            />
-            <Text style={styles.menuText}>Account</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem}>
-            <Image
-              source={require("../assets/images/bookin.png")}
-              style={styles.icon}
-            />
-            <Text style={styles.menuText}>Bookings</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem}>
-            <Image
-              source={require("../assets/images/cards.png")}
-              style={styles.icon}
-            />
-            <Text style={styles.menuText}>My Cards</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem}>
-            <Image
-              source={require("../assets/images/vip.png")}
-              style={styles.icon}
-            />
-            <Text style={styles.menuText}>InSAiider VIP</Text>
-          </TouchableOpacity>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.profileContainer}>
+          <Image
+            source={require("../assets/images/profile.png")}
+            style={styles.profileImage}
+          />
+          <Text style={styles.userName}>DiGiTECH</Text>
+          <Text style={styles.userEmail}>dgt@gmail.com</Text>
         </View>
-      </View>
 
-      {/* ส่วนของ Settings */}
-      <View style={styles.sectionContainer}>
-        <Text style={styles.sectionTitle}>Settings</Text>
-        <View style={styles.card}>
-          <TouchableOpacity style={styles.menuItem}>
-            <Image
-              source={require("../assets/images/setting.png")}
-              style={styles.icon}
-            />
-            <Text style={styles.menuText}>Settings</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem}>
-            <Image
-              source={require("../assets/images/contact.png")}
-              style={styles.icon}
-            />
-            <Text style={styles.menuText}>Help Center</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem}>
-            <Image
-              source={require("../assets/images/help.png")}
-              style={styles.icon}
-            />
-            <Text style={styles.menuText}>Contact Us</Text>
-          </TouchableOpacity>
+        {/* ส่วนของ My Account */}
+        <View style={styles.sectionContainer}>
+          <Text style={styles.sectionTitle}>My account</Text>
+          <View style={styles.card}>
+            <TouchableOpacity style={styles.menuItem}>
+              <Image
+                source={require("../assets/images/user.png")}
+                style={styles.icon}
+              />
+              <Text style={styles.menuText}>Account</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem}>
+              <Image
+                source={require("../assets/images/bookin.png")}
+                style={styles.icon}
+              />
+              <Text style={styles.menuText}>Bookings</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem}>
+              <Image
+                source={require("../assets/images/cards.png")}
+                style={styles.icon}
+              />
+              <Text style={styles.menuText}>My Cards</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem}>
+              <Image
+                source={require("../assets/images/vip.png")}
+                style={styles.icon}
+              />
+              <Text style={styles.menuText}>InSAiider VIP</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
 
-      {/* ปุ่ม Log out */}
-      <TouchableOpacity
-        style={styles.logoutButton}
-        onPress={() => navigation.navigate("Login")}
-      >
-        <Text style={styles.logoutText}>Log out</Text>
-        <Image
-          source={require("../assets/images/logout.png")}
-          style={styles.icon}
-        />
-      </TouchableOpacity>
-    </View>
+        {/* ส่วนของ Settings */}
+        <View style={styles.sectionContainer}>
+          <Text style={styles.sectionTitle}>Settings</Text>
+          <View style={styles.card}>
+            <TouchableOpacity style={styles.menuItem}>
+              <Image
+                source={require("../assets/images/setting.png")}
+                style={styles.icon}
+              />
+              <Text style={styles.menuText}>Settings</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem}>
+              <Image
+                source={require("../assets/images/contact.png")}
+                style={styles.icon}
+              />
+              <Text style={styles.menuText}>Help Center</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuItem}>
+              <Image
+                source={require("../assets/images/help.png")}
+                style={styles.icon}
+              />
+              <Text style={styles.menuText}>Contact Us</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        {/* ปุ่ม Log out */}
+        <TouchableOpacity
+          style={styles.logoutButton}
+          onPress={() => navigation.navigate("Login")}
+        >
+          <Text style={styles.logoutText}>Log out</Text>
+          <Image
+            source={require("../assets/images/logout.png")}
+            style={styles.icon}
+          />
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -167,6 +169,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 30,
+    marginBottom: 30,
   },
   logoutText: {
     fontSize: 18,

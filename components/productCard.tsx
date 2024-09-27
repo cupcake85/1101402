@@ -58,7 +58,7 @@ export default function ProductCard(props: any) {
 const styles = StyleSheet.create({
   container: {
     width: "45%",
-    margin: 10,
+    margin: 5,
   },
   card: {
     borderWidth: 1,
