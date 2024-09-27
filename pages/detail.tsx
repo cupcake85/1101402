@@ -3,7 +3,7 @@ import * as React from "react";
 import {
   View,
   Text,
-  Button,
+  FlatList,
   ScrollView,
   Image,
   StyleSheet,
@@ -11,7 +11,15 @@ import {
 } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-export default function DetailScreen({ navigation }: { navigation: any }) {
+export default function DetailScreen({
+  navigation,
+  route,
+}: {
+  navigation: any;
+  route: any;
+}) {
+  const { name, price, img, detail } = route.params;
+
   return (
     <ScrollView>
       <View style={{ flex: 1 }}>
@@ -21,25 +29,22 @@ export default function DetailScreen({ navigation }: { navigation: any }) {
 
         <View
           style={{
-            flex: 3,
+            flex: 2.5,
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <Image
-            style={styles.img}
-            source={require("../assets/images/product2.jpg")}
-          />
+          <Image style={styles.img} source={img} />
         </View>
         <View style={{ flex: 1, margin: 10 }}>
-          <Text style={styles.title}>Traditional Thai Ceremony</Text>
+          <Text style={styles.title}>{name}</Text>
           <Text style={styles.des}>
             Book your Traditional Thai Wedding and work with our expert team to
             personalise your dream day and tailor every element to your taste.
           </Text>
         </View>
         <View style={{ flex: 1.2, margin: 10 }}>
-          <Text style={styles.price}>฿85,000</Text>
+          <Text style={styles.price}>{price}</Text>
           <View style={{ flexDirection: "row" }}>
             <TouchableOpacity style={styles.cartbtn}>
               <Text> ADD TO CART</Text>
@@ -52,12 +57,34 @@ export default function DetailScreen({ navigation }: { navigation: any }) {
           </View>
         </View>
         <View style={{ flex: 2.5, backgroundColor: "aqau", margin: 10 }}>
-          <Text>
+          <Text style={styles.des}>
             Start your life together with a spiritual ceremony, presided over by
             monks and surrounded by family and friends. Celebrate in a tropical
             setting and include traditional rituals in your auspicious union to
             bless a lifetime of happiness to come.
           </Text>
+          <br />
+          <Text style={styles.des}>What’s included</Text>
+          <br />
+          <FlatList
+            data={[
+              { key: "Wedding venue with decorations" },
+              { key: "Flower petals on the aisle" },
+              {
+                key: "Table and chairs arranged and decorated in the style of your choice",
+              },
+              { key: "Master Of Ceremonies" },
+              { key: "Buddhist Monks" },
+              { key: "Traditional betel bowl and water pouring ceremony" },
+              { key: "Floral garlands for the couple" },
+              { key: "Welcome drinks and fresh fruits on arrival" },
+              { key: "A wedding blessing certificate" },
+              { key: "A ‘love tree’ planting ceremony" },
+            ]}
+            renderItem={({ item }) => (
+              <Text style={styles.des}>{`- ` + item.key}</Text>
+            )}
+          />
         </View>
       </View>
     </ScrollView>

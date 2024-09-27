@@ -11,7 +11,7 @@ export default function ProductCard(props: any) {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.card}
-        onPress={() => navigation.navigate("Detail")}
+        onPress={() => navigation.navigate("Detail", { name, price, img })}
       >
         <View style={styles.img}>
           <Image

@@ -1,17 +1,22 @@
 import * as React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Header(props: any) {
+  const navigation = useNavigation();
   return (
     <View style={styles.headerWrapper}>
       <View style={styles.header}>
-        <View style={styles.logo}>
+        <TouchableOpacity
+          style={styles.logo}
+          onPress={() => navigation.navigate("Home")}
+        >
           <Image
             source={require("../assets/images/logo_saii.png")}
             style={{ height: 30, width: 100 }}
           ></Image>
-        </View>
+        </TouchableOpacity>
         <View style={styles.right}>
           <View style={styles.cart}>
             <AntDesign name="shoppingcart" size={24} color="black" />
