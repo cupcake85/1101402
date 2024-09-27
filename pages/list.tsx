@@ -27,24 +27,22 @@ export default function ListScreen({ navigation }: { navigation: any }) {
             choice is all yours.
           </Text>
         </View>
-        <View
-          style={{ flex: 1.1, justifyContent: "center", alignItems: "center" }}
-        >
-          <View style={styles.typeBoxGroup}>
-            <TouchableOpacity style={styles.allBox}>
-              <Text style={{ color: "white" }}>All</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.typeBox}>
-              <Text>IN-ROOM RELATED</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.typeBox}>
-              <Text>TOUR & ACTIVITY</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.typeBox}>
-              <Text>FOOD & BEVERAGE</Text>
-            </TouchableOpacity>
-          </View>
+
+        <View style={styles.typeBoxGroup}>
+          <TouchableOpacity style={styles.allBox}>
+            <Text style={{ color: "white" }}>All</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.typeBox}>
+            <Text>IN-ROOM RELATED</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.typeBox}>
+            <Text>TOUR & ACTIVITY</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.typeBox}>
+            <Text>FOOD & BEVERAGE</Text>
+          </TouchableOpacity>
         </View>
+
         <View style={{ flex: 7.5 }}>
           <View
             style={{
@@ -69,7 +67,7 @@ export default function ListScreen({ navigation }: { navigation: any }) {
             />
             <ProductCard
               name="Stay Longer & Save"
-              detail="Give yourself time to unwind in paradise – save 15% on 7 nights or more."
+              detail="Give yourself time to unwind in paradise – save 15% on 7 nights"
               price="THB 10,250"
               img={require("../assets/images/product3.jpg")}
             />
@@ -122,13 +120,11 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   typeBox: {
-    textAlign: "center",
     alignItems: "center",
     justifyContent: "center",
     borderWidth: 0.5,
     margin: 10,
-    height: 35,
-    padding: 15,
+    padding: 10,
     borderColor: "#4D9C9B",
   },
   allBox: {
@@ -137,8 +133,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     margin: 10,
-    height: 35,
-    padding: 15,
+    width: 55,
+    padding: 10,
   },
   cardGroup: {
     flex: 1,

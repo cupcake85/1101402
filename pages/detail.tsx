@@ -13,21 +13,22 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 
 export default function DetailScreen({ route }: { route: any }) {
-  const { name, price, img, detail } = route.params;
+  const { name, price, img } = route.params;
   const navigation = useNavigation();
 
   return (
     <ScrollView>
       <View style={{ flex: 1 }}>
-        <View style={{ flex: 1.3 }}>
+        <View style={{ flex: 1.5 }}>
           <Header name="DETAIL" />
         </View>
 
         <View
           style={{
-            flex: 2.5,
+            flex: 2,
             justifyContent: "center",
             alignItems: "center",
+            marginTop: 10,
           }}
         >
           <Image style={styles.img} source={img} />
@@ -68,9 +69,9 @@ export default function DetailScreen({ route }: { route: any }) {
             setting and include traditional rituals in your auspicious union to
             bless a lifetime of happiness to come.
           </Text>
-          <br />
+
           <Text style={styles.des}>What’s included</Text>
-          <br />
+
           <Text style={styles.des}>- Wedding venue with decorations</Text>
           <Text style={styles.des}>- Flower petals on the aisle</Text>
           <Text style={styles.des}>
