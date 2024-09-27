@@ -10,15 +10,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { useNavigation } from "@react-navigation/native";
 
-export default function DetailScreen({
-  navigation,
-  route,
-}: {
-  navigation: any;
-  route: any;
-}) {
+export default function DetailScreen({ route }: { route: any }) {
   const { name, price, img, detail } = route.params;
+  const navigation = useNavigation();
 
   return (
     <ScrollView>
@@ -46,9 +42,11 @@ export default function DetailScreen({
         <View style={{ flex: 1.2, margin: 10 }}>
           <Text style={styles.price}>{price}</Text>
           <View style={{ flexDirection: "row" }}>
-            <TouchableOpacity style={styles.cartbtn}>
-              <Text> ADD TO CART</Text>
-
+            <TouchableOpacity
+              style={styles.cartbtn}
+              onPress={() => navigation.navigate("Cart")}
+            >
+              <Text>ADD TO CART </Text>
               <AntDesign name="shoppingcart" size={24} color="black" />
             </TouchableOpacity>
             <TouchableOpacity style={styles.buybtn}>
@@ -56,7 +54,14 @@ export default function DetailScreen({
             </TouchableOpacity>
           </View>
         </View>
-        <View style={{ flex: 2.5, backgroundColor: "aqau", margin: 10 }}>
+        <View
+          style={{
+            flex: 2.5,
+            backgroundColor: "aqau",
+            margin: 10,
+            marginBottom: 5,
+          }}
+        >
           <Text style={styles.des}>
             Start your life together with a spiritual ceremony, presided over by
             monks and surrounded by family and friends. Celebrate in a tropical
@@ -66,25 +71,22 @@ export default function DetailScreen({
           <br />
           <Text style={styles.des}>What’s included</Text>
           <br />
-          <FlatList
-            data={[
-              { key: "Wedding venue with decorations" },
-              { key: "Flower petals on the aisle" },
-              {
-                key: "Table and chairs arranged and decorated in the style of your choice",
-              },
-              { key: "Master Of Ceremonies" },
-              { key: "Buddhist Monks" },
-              { key: "Traditional betel bowl and water pouring ceremony" },
-              { key: "Floral garlands for the couple" },
-              { key: "Welcome drinks and fresh fruits on arrival" },
-              { key: "A wedding blessing certificate" },
-              { key: "A ‘love tree’ planting ceremony" },
-            ]}
-            renderItem={({ item }) => (
-              <Text style={styles.des}>{`- ` + item.key}</Text>
-            )}
-          />
+          <Text style={styles.des}>- Wedding venue with decorations</Text>
+          <Text style={styles.des}>- Flower petals on the aisle</Text>
+          <Text style={styles.des}>
+            - Table and chairs arranged and decorated in the style of your
+            choice
+          </Text>
+          <Text style={styles.des}>- Master Of Ceremonies</Text>
+          <Text style={styles.des}>- Buddhist Monks</Text>
+          <Text style={styles.des}>
+            - Traditional betel bowl and water pouring ceremony
+          </Text>
+          <Text style={styles.des}>- Floral garlands for the couple</Text>
+          <Text style={styles.des}>
+            - Welcome drinks and fresh fruits on arrival
+          </Text>
+          <Text style={styles.des}>- A wedding blessing certificate</Text>
         </View>
       </View>
     </ScrollView>
@@ -103,6 +105,7 @@ const styles = StyleSheet.create({
   },
   des: {
     color: "grey",
+    marginBottom: 5,
   },
   price: {
     fontSize: 30,

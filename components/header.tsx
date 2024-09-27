@@ -18,9 +18,12 @@ export default function Header(props: any) {
           ></Image>
         </TouchableOpacity>
         <View style={styles.right}>
-          <View style={styles.cart}>
+          <TouchableOpacity
+            style={styles.cart}
+            onPress={() => navigation.navigate("Cart")}
+          >
             <AntDesign name="shoppingcart" size={24} color="black" />
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
 
